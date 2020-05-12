@@ -1,3 +1,4 @@
+import 'package:dance_trainin_app/ui/pages/home_page.dart';
 import 'package:dance_trainin_app/view_models/app_models.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Dance Training',
-        theme: Provider.of<AppModel>(context, listen: false).themeData,
+
+        debugShowCheckedModeBanner: false,
+        // theme: Provider.of<AppModel>(context, listen: false).themeData,
+        home: HomePage(),
       ),
     );
   }
