@@ -35,18 +35,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.black,
         // appBar: AppBar(),
-        body: PageView(
-          controller: pageController,
-          onPageChanged: onPageChanged,
-          physics: NeverScrollableScrollPhysics(),
-          children: <Widget>[
-            ExplorePage(),
-            Container(color: Colors.yellow),
-            Container(color: Colors.green),
-            Container(color: Colors.pink),
-            Container(color: Colors.lightBlue),
-            Container(color: Colors.amber),
-          ],
+        body: SafeArea(
+          child: PageView(
+            controller: pageController,
+            onPageChanged: onPageChanged,
+            physics: NeverScrollableScrollPhysics(),
+            children: <Widget>[
+              ExplorePage(),
+              Container(color: Colors.yellow),
+              Container(color: Colors.green),
+              Container(color: Colors.pink),
+              Container(color: Colors.lightBlue),
+              Container(color: Colors.amber),
+            ],
+          ),
         ),
         bottomNavigationBar: NavBar(
           onTap: onTap,
