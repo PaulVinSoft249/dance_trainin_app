@@ -9,8 +9,12 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.transparent,
-      unselectedItemColor: Colors.grey[400],
+      backgroundColor: pageIndex == 2 || pageIndex == 3 || pageIndex == 4
+          ? Colors.white
+          : Colors.transparent,
+      unselectedItemColor: pageIndex == 2 || pageIndex == 3 || pageIndex == 4
+          ? Colors.grey[800]
+          : Colors.grey[400],
       selectedItemColor: Colors.red,
       currentIndex: pageIndex,
       onTap: onTap,
@@ -25,14 +29,13 @@ class NavBar extends StatelessWidget {
           icon: Icon(Icons.video_label),
         ),
         BottomNavigationBarItem(
-          title: Text('Discover'),
+          title: Text('Search\nvideos'),
           icon: Icon(
             Icons.search,
-            size: 40,
           ),
         ),
         BottomNavigationBarItem(
-          title: Text('Favorited(0)'),
+          title: Text('Favorites'),
           icon: Icon(Icons.favorite),
         ),
         BottomNavigationBarItem(

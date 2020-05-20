@@ -1,3 +1,4 @@
+import 'package:dance_trainin_app/models/providers/mock_data_prov.dart';
 import 'package:dance_trainin_app/pages/home_page.dart';
 import 'package:dance_trainin_app/view_models/app_models.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class ProviderInjector extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppModel>.value(value: AppModel()),
+        ChangeNotifierProvider<MockDataProv>.value(value: MockDataProv()),
       ],
       child: MyApp(),
     );

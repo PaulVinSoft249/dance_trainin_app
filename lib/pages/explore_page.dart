@@ -1,14 +1,18 @@
+import 'package:dance_trainin_app/models/providers/mock_data_prov.dart';
 import 'package:dance_trainin_app/pages/video_player_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ExplorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+    final mockDataProv = Provider.of<MockDataProv>(context, listen: false);
+    //example ui structure
     return PageView.builder(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
-      itemCount: 6,
+      itemCount: mockDataProv.exploreVidList.length,
       itemBuilder: (ctx, i) {
         return Container(
           height: screenSize.height,
@@ -24,7 +28,8 @@ class ExplorePage extends StatelessWidget {
             children: <Widget>[
               profileIcon(context),
               playButton(context),
-              caption(context),
+              caption(context, mockDataProv.exploreVidList[i].videoTitle,
+                  mockDataProv.exploreVidList[i].videoDescription),
             ],
           ),
         );
@@ -36,7 +41,6 @@ class ExplorePage extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: IconButton(
-        // splashColor: Colors.transparent,
         iconSize: 150,
         color: Colors.white.withOpacity(.5),
         icon: Icon(
@@ -51,7 +55,7 @@ class ExplorePage extends StatelessWidget {
     );
   }
 
-  caption(BuildContext context) {
+  caption(BuildContext context, String title, String description) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Align(
@@ -60,11 +64,11 @@ class ExplorePage extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                text: 'Hiphop dance\n',
+                text: '$title\n',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               TextSpan(
-                text: '#the revelation dance crew',
+                text: '#$description',
                 style: TextStyle(fontSize: 14, color: Colors.grey[400]),
               ),
             ],

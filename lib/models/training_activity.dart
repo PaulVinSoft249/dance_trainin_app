@@ -19,6 +19,9 @@ class TrainingActivity implements BaseActivity {
   @override
   ActivityType videoType;
 
+  @override
+  String videoUrl;
+
   TrainingActivity({
     this.dateTime,
     this.videoType,
@@ -26,5 +29,6 @@ class TrainingActivity implements BaseActivity {
     this.videoId,
     this.videoDescription,
     this.uid,
+    this.videoUrl,
   });
 }
