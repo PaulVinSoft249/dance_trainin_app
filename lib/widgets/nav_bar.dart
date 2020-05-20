@@ -14,7 +14,7 @@ class NavBar extends StatelessWidget {
       selectedItemColor: Colors.red,
       currentIndex: pageIndex,
       onTap: onTap,
-      iconSize: 25,
+      iconSize: 20,
       items: [
         BottomNavigationBarItem(
           title: Text('Explore'),

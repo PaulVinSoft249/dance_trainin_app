@@ -1,4 +1,5 @@
-import 'package:dance_trainin_app/ui/pages/explore_page.dart';
+import 'package:dance_trainin_app/pages/explore_page.dart';
+import 'package:dance_trainin_app/pages/traing_vid_page.dart';
 import 'package:dance_trainin_app/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
               ExplorePage(),
-              Container(color: Colors.yellow),
+              TraininVidPage(),
               Container(color: Colors.green),
               Container(color: Colors.pink),
               Container(color: Colors.lightBlue),

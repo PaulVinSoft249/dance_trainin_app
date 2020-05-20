@@ -1,4 +1,4 @@
-import 'package:dance_trainin_app/ui/pages/home_page.dart';
+import 'package:dance_trainin_app/pages/home_page.dart';
 import 'package:dance_trainin_app/view_models/app_models.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
